@@ -23,7 +23,7 @@ export default function Home() {
     <>
       <Header />
       <div className="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-        <div className="grid grid-cols-4 max-md:grid-cols-2 max-sm:grid-cols-1 grid-rows-4 gap-4">
+        <div className="grid grid-cols-4 max-lg:grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1 grid-rows-4 gap-4">
           {users.map((user: User) => {
             return (
               <>
@@ -41,8 +41,10 @@ export default function Home() {
                         {user.name.first} {user.name.last}
                       </h5>
                       <span className="text-sm text-gray-500 dark:text-gray-400">
-                        {user.gender == "female" ? "Feminino" : "Masculino"} -{" "}
-                        {user.dob.age} anos
+                        {user.email}
+                      </span>
+                      <span className="text-sm text-gray-500 dark:text-gray-400">
+                        {user.gender == "female" ? "Feminino" : "Masculino"} - {user.dob.age} anos
                       </span>
                       <div className="mt-4 flex space-x-3 lg:mt-6">
                         <Tooltip
