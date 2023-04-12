@@ -14,13 +14,13 @@ export default function Home() {
       const response = await fetch(`${urlBase}${userAmount}`);
       console.log(response);
       const responseAmount: MultipleRandomUser = await response.json();
-      setUsers(responseAmount.results);
+      setUsers(prevUsers => [...prevUsers, ...responseAmount.results]);
     }
     fetchDataAmount();
   }, [userAmount]);
 
   function handleLoadMoreUsers() {
-    setUserAmount(userAmount + 16)
+    setUserAmount((prevUserAmount) => prevUserAmount  + 16)
   }
 
   return (
