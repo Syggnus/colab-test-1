@@ -14,20 +14,20 @@ export default function Home() {
       const response = await fetch(`${urlBase}${userAmount}`);
       console.log(response);
       const responseAmount: MultipleRandomUser = await response.json();
-      setUsers(prevUsers => [...prevUsers, ...responseAmount.results]);
+      setUsers((prevUsers) => [...prevUsers, ...responseAmount.results]);
     }
     fetchDataAmount();
   }, [userAmount]);
 
   function handleLoadMoreUsers() {
-    setUserAmount((prevUserAmount) => prevUserAmount  + 16)
+    setUserAmount((prevUserAmount) => prevUserAmount + 16);
   }
 
   return (
     <>
       <Header />
       <ListCard users={users} handleLoadMoreUsers={handleLoadMoreUsers} />
-      <FooterContainer/> 
+      <FooterContainer />
     </>
   );
 }
