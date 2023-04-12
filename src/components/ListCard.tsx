@@ -1,12 +1,14 @@
 import { User } from "@/interface/IRandomuser";
-import { Card, Tooltip } from "flowbite-react";
+import { Button, Card, Tooltip } from "flowbite-react";
 import Image from "next/image";
+import { ReactEventHandler } from "react";
 
 interface PropsCard {
   users: User[]
+  handleLoadMoreUsers: ReactEventHandler
 }
 
-export default function ListCard({users}: PropsCard) {
+export default function ListCard({users, handleLoadMoreUsers}: PropsCard) {
   return (
     <>
       <div className="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
@@ -58,6 +60,11 @@ export default function ListCard({users}: PropsCard) {
               </>
             );
           })}
+        </div>
+        <div className="flex justify-center items-center mt-8 mb-10">
+          <Button onClick={handleLoadMoreUsers}>
+            Carregar Mais Usuários
+          </Button>
         </div>
       </div>
     </>
