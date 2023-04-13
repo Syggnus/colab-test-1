@@ -12,7 +12,7 @@ export default function ListCard({ users, handleLoadMoreUsers }: PropsCard) {
   return (
     <>
       <div className="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-        <div className="grid grid-cols-4 max-lg:grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1 grid-rows-4 gap-4">
+        <div className="mt-8 grid grid-cols-6 max-2xl:grid-cols-5 max-xl:grid-cols-4 max-lg:grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1 grid-rows-4 gap-4 place-items-center">
           {users.map((user: User) => {
             return (
               <>
